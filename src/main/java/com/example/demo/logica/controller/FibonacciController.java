@@ -32,7 +32,7 @@ public class FibonacciController {
     }
 
     @GetMapping("/{num}")
-    public ResponseEntity<?> getTopConsulted(@PathVariable("num") long num){
+    public ResponseEntity<?> getFiboNum(@PathVariable("num") long num){
         try {
             return new ResponseEntity<BigInteger>(fibonacciService.getFibonacci(num), HttpStatus.OK);
         }catch(Exception e){
