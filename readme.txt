@@ -26,6 +26,10 @@ secuencia 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89... . Ejemplo n:6 nos entregaría 
 El proyecto contiene un TEST el cual verifica en su totalidad cada parte usada en la API, este se ejecuta
 corriendo el archivo FibonacciServiceTest.java dentro de la carpeta src/main/java/com.example.demo/logica/test.
 
+La latencia con los servidores en los que se subió el proyecto genera una demora en la respuesta. 
+Esto suele ocurrir con los servicios gratuitos para bases de datos y hosting.
+La mejor forma de probar el proyecto es levantándolo en local (tanto el proyecto como su base de datos).
+
 La API esta subida a Railway , la dirección de la misma es http://fibonacci-production-d155.up.railway.app
 La Base de datos esta almacenada en Aiven usando MySQL.
 
