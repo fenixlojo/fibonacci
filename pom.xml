@@ -91,6 +91,15 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+<!--				<version>3.21.0</version> &lt;!&ndash; Asegúrate de usar una versión que soporte Java 22 &ndash;&gt;-->
+				<configuration>
+					<source>22</source>
+					<target>22</target>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
