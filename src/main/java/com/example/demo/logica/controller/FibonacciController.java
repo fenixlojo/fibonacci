@@ -21,10 +21,13 @@ public class FibonacciController {
     @Autowired
     FibonacciService fibonacciService;
 
-    @GetMapping("/top-10-consulted")
-    public ResponseEntity<?> getTopConsulted(){
+    @GetMapping("/top-consulted/{limit}")
+    public ResponseEntity<?> getTopConsulted(@PathVariable("limit") long limit){
         try {
-            return new ResponseEntity<List<Fibonacci>>(fibonacciService.getAllByAppearances(), HttpStatus.OK);
+            if(limit <= 0){
+                return new ResponseEntity<String>("Limit must be at least 1", HttpStatus.BAD_REQUEST);
+            }
+            return new ResponseEntity<List<Fibonacci>>(fibonacciService.getAllByAppearances(limit), HttpStatus.OK);
         }catch(Exception e){
             return new ResponseEntity<String>(Arrays.toString(e.getStackTrace()), HttpStatus.BAD_REQUEST);
         }

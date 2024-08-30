@@ -13,8 +13,8 @@ import java.util.List;
 public interface FibonacciRepository extends JpaRepository<Fibonacci,Long> {
 
     @Query(nativeQuery = true,value = "SELECT f.* FROM fibonacci f " +
-            "ORDER BY f.appearances desc LIMIT 10")
-    List<Fibonacci> getAllByAppearances();
+            "ORDER BY f.appearances desc LIMIT :limit")
+    List<Fibonacci> getAllByAppearances(long limit);
 
     @Query(nativeQuery = true,value = "SELECT f.* FROM fibonacci f " +
             "WHERE f.position = :position")

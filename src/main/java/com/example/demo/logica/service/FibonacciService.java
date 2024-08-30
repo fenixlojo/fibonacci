@@ -12,8 +12,8 @@ import java.util.List;
 public class FibonacciService {
     @Autowired
     FibonacciRepository fibonacciRepository;
-    public List<Fibonacci> getAllByAppearances () {
-        return fibonacciRepository.getAllByAppearances();
+    public List<Fibonacci> getAllByAppearances (long limit) {
+        return fibonacciRepository.getAllByAppearances(limit);
     }
 
     public BigInteger getFibonacci(long n) {
